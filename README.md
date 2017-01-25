@@ -1,5 +1,5 @@
 # Instagram token fetcher
-This repository offers module for Go project to fetch instagram access tokens programmatically.
+This repository offers module for Go projects to fetch instagram access tokens programmatically.
 It also has a command line tool for getting access tokens.
 
 ## Usage
@@ -42,3 +42,7 @@ From command line
 go install github.com/heppu/instagram-token-fetcher/cmd/ig-token
 ig-token --help
 ```
+
+## How it works
+
+First token client opens http server to listen redirect url and catch the access token. After that it creates http client with cookie jar and logins with user credentials by parsing data from html responses.
